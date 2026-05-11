@@ -1,6 +1,6 @@
 ---
-title: Example Category
-description: A description of this category
+title: AI
+description: Anything about Artificial Intelligence
 image:
 
 # Badge style
