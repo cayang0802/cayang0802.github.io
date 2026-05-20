@@ -16,9 +16,9 @@
         icon = "brand-github"
 
 [[social]]
-    identifier = "twitter"
-    name       = "Twitter"
-    url        = "https://twitter.com"
+    identifier = "linkedin"
+    name       = "LinkedIn"
+    url        = "https://www.linkedin.com/in/chia-an-yang/"
 
     [social.params]
-        icon = "brand-twitter"
+        icon = "brand-linkedin"
