@@ -1,3 +1,14 @@
 /*
     You can add your own custom styles here.
 */
+
+/* Show article count next to each term in the category/tag cloud widgets */
+.tagCloud-tags a .tagCloud-count {
+    margin-left: 9px;
+    font-size: 1.1rem;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 1px 5px;
+    line-height: 1;
+}

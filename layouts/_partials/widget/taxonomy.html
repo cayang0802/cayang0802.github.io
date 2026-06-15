@@ -1,0 +1,41 @@
+{{- $context := .Context -}}
+
+{{- if not .Params.taxonomy -}}
+    {{- warnf "Taxonomy field is required" -}}
+{{- end -}}
+
+{{- $taxonomy := index $context.Site.Taxonomies .Params.taxonomy -}}
+{{- if not $taxonomy -}}
+    {{- warnf "Taxonomy %s not found" .Params.taxonomy -}}
+{{- end -}}
+
+{{- $taxonomyPage := $taxonomy.Page -}}
+{{- $widgetTitle := .Params.title -}}
+{{- $limit := default 10 .Params.limit -}}
+{{- $icon := default .Params.taxonomy .Params.icon -}}
+{{- $showLink := default true .Params.showLink -}}
+
+<section class="widget tagCloud">
+    <div class="widget-icon">
+        {{ partial "helper/icon" $icon }}
+    </div>
+    <h2 class="widget-title section-title">
+        {{ if and $showLink $taxonomyPage }}
+            <a href="{{ $taxonomyPage.RelPermalink }}">
+                {{ $widgetTitle }}
+            </a>
+        {{ else }}
+            {{ $widgetTitle }}
+        {{ end }}
+    </h2>
+
+    {{- $colors := slice "#e76f51" "#2a9d8f" "#e9c46a" "#264653" "#a8dadc" "#f4a261" "#457b9d" "#e63946" "#6a994e" "#9b5de5" -}}
+    <div class="tagCloud-tags">
+        {{ range $i, $term := first $limit $taxonomy.ByCount }}
+            {{- $color := index $colors (mod $i (len $colors)) -}}
+            <a href="{{ $term.Page.RelPermalink }}">
+                {{ $term.Page.Title }}<span class="tagCloud-count" style="background-color: {{ $color }}; border-color: {{ $color }};">{{ $term.Count }}</span>
+            </a>
+        {{ end }}
+    </div>
+</section>
