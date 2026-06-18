@@ -2,6 +2,16 @@
     You can add your own custom styles here.
 */
 
+/* Particles background */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 /* Show article count next to each term in the category/tag cloud widgets */
 .tagCloud-tags a .tagCloud-count {
     margin-left: 9px;

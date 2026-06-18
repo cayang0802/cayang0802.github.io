@@ -1,0 +1,39 @@
+<div id="particles-js"></div>
+<script src="/js/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 48, density: { enable: true, value_area: 800 } },
+    color: { value: "#888888" },
+    shape: { type: "circle" },
+    opacity: { value: 0.7, random: false },
+    size: { value: 1, random: false },
+    line_linked: {
+      enable: true,
+      distance: 100,
+      color: "#e91e8c",
+      opacity: 0.5,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      random: true,
+      out_mode: "out"
+    }
+  },
+  interactivity: {
+    detect_on: "window",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: false },
+      resize: true
+    },
+    modes: {
+      grab: { distance: 160, line_linked: { opacity: 0.8 } }
+    }
+  },
+  retina_detect: true
+});
+</script>
